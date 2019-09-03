@@ -30,7 +30,7 @@
 ## Clone
 * Clone this repo
 ```bash
-$ git clone https://github.com/havus/express-template.git
+$ git clone https://github.com/havus/express-user-template.git
 ```
 
 ## Installation
