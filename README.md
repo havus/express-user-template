@@ -39,13 +39,22 @@ Enter to the folder and install all `Dependencies`
 $ npm install
 # OR
 $ yarn
-```
-<br>
-<i>Default port in <b>3000</b></i>
+``` 
 <br>
 
 ## Usage
+### Running server
+```bash
+$ npm run dev
+# OR
+$ yarn dev
+```
+#### Base Url default :<br>
+> `http://localhost:3000`
 
+<br>
+
+### List Endpoint
 * [**User**](#users)
   * [Sign Up](#sign-up)
   * [Sign In](#sign-in)
