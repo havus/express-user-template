@@ -22,7 +22,7 @@ yarn
 
   #### _Request_ :
   * body:
-    ```json
+    ```javascript
     {
       "fullname": String(required),
       "username": String(required),
@@ -58,7 +58,7 @@ yarn
 
   #### _Request_ :
   * body:
-    ```json
+    ```javascript
     {
       "email": String(required),
       "password": String(required),
