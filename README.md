@@ -1,24 +1,59 @@
 # Server Template With Express
+> _This repo made with love_  :heart:
 
-## Getting Started
-Install all package
+## **_Section Header_**
+* [Dependencies](#dependencies)
+* [Features](#features)
+* [Clone](#clone)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Another Error](#another-error)
+* [License](#license)
+
+## Dependencies
+> List of all dependencies
+* [morgan](https://www.npmjs.com/package/morgan)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [express](https://www.npmjs.com/package/express)
+* [mongoose](https://www.npmjs.com/package/mongoose)
+* [cors](https://www.npmjs.com/package/cors)
+* [bcryptjs](https://www.npmjs.com/package/bcryptjs)
+* [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+
+## Features
+* Sign Up
+* Sign In
+* Knowing Request With Morgan for Development
+* Authentication Middleware
+* Error Handler Middleware
+
+## Clone
+* Clone this repo
 ```bash
-npm install
+$ git clone https://github.com/havus/express-template.git
+```
+
+## Installation
+Enter to the folder and install all `Dependencies`
+```bash
+$ npm install
 # OR
-yarn
+$ yarn
 ```
 <br>
 <i>Default port in <b>3000</b></i>
 <br>
 
-* [User](#users)
+## Usage
+
+* [**User**](#users)
   * [Sign Up](#sign-up)
   * [Sign In](#sign-in)
 
-## Users
-+ ### Sign Up
-  **Method** : `POST`<br>
-  **Endpoint** : `/user/signup`
+### Users
++ ### **Sign Up**
+  > **Method** : `POST`<br>
+  > **Endpoint** : `/user/signup`
 
   #### _Request_ :
   * body:
@@ -53,8 +88,8 @@ yarn
     ```
 
 + ### Sign In
-  **Method** : `POST`<br>
-  **Endpoint** : `/user/signin`
+  > **Method** : `POST`<br>
+  > **Endpoint** : `/user/signin`
 
   #### _Request_ :
   * body:
@@ -89,3 +124,14 @@ yarn
     "message": "Internal server error :("
   }
   ```
+
+
+## License
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
+- Copyright 2015 © <a href="http://fvcproductions.com" target="_blank">FVCproductions</a>.
+
+<br><br><br>
+### Happy Hacking!

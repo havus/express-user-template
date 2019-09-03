@@ -1,4 +1,4 @@
-if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'dev') {
   require('dotenv').config();
 }
 const express = require('express');
@@ -11,7 +11,7 @@ mongoose.connect(process.env.ATLAS_CLUSTER, {
   useCreateIndex: true,
 });
 
-app.use(require('morgan')('dev'));
+app.use(require('morgan')(process.env.NODE_ENV));
 app.use(require('cors')());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
