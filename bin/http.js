@@ -9,5 +9,5 @@ server.listen( PORT , () => {
     '\x1b[33m\x1b[1m', ' *',
     '\x1b[37m\x1b[1m', `Exclusive connected to port >>>>>> ${PORT}!`,
     '\x1b[33m\x1b[1m', ' *','\x1b[34m\x1b[1m');
-  console.log('\x1b[33m\x1b[1m', ' * * * * * * * * * * * * * * * * * * * * * * * *');
+  console.log('\x1b[33m\x1b[1m', ' * * * * * * * * * * * * * * * * * * * * * * * *\033[0m');
 });
