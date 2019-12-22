@@ -1,4 +1,4 @@
-const {jwtVerify} = require('../helper/jwt');
+const { jwtVerify } = require('../helper/jwt');
 
 module.exports = (req, res, next) => {
   try {

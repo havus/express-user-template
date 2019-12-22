@@ -1,56 +1,71 @@
 const User = require('../models/user');
 const { comparePassword } = require('../helper/bcryptjs');
-const { jwtHash, jwtVerify } = require('../helper/jwt');
+const { jwtHash } = require('../helper/jwt');
 
 class UserController {
   static signUp (req, res, next) {
-    let {fullname, username, email, password} = req.body;
+    const {
+      fullname,
+      username,
+      email,
+      password,
+    } = req.body;
 
-    let obj = {
-      fullname, username, email, password
-    }
+    const payload = {
+      fullname,
+      username,
+      email,
+      password,
+    };
 
-    User.create(obj)
-    .then((data) => {
-      let token = {
-        _id: data._id,
-        fullname,
-        username,
-        email,
-        profile_pic: process.env.PIC_PROFILE_DEFAULT,
-      }
-      res.status(201).json({ token: jwtHash(token) });
-    })
-    .catch(next);
+    User.create(payload)
+      .then((data) => {
+        const token = {
+          _id: data._id,
+          fullname,
+          username,
+          email,
+          profile_pic: process.env.PIC_PROFILE_DEFAULT,
+        }
+        res.status(201).json({ token: jwtHash(token) });
+      })
+      .catch(next);
   }
 
   static signIn (req, res, next) {
-    let {email, password} = req.body;
+    const {
+      email,
+      password,
+    } = req.body;
     if (!email || !password) {
       next({
-        message: 'Wrong username / password',
+        message: 'Username / password cannot be empty',
       })
     } else {
       User.findOne({ email })
-      .then(one => {
-        if (one) {
-          if (comparePassword(password, one.password)) {
-            const {_id, fullname, username, email } = one;
-            let obj = {_id, fullname, username, email };
-            console.log('berhasil login');
-            res.status(200).json({ token: jwtHash(obj) });
+        .then((result) => {
+          if (result) {
+            if (comparePassword(password, result.password)) {
+              const {_id, fullname, username } = result;
+              const payload = {
+                _id,
+                fullname,
+                username,
+                email,
+              };
+              res.status(200).json({ token: jwtHash(payload) });
+            } else {
+              next({
+                message: 'Wrong username / password',
+              });
+            }
           } else {
             next({
-              message: 'Wrong username / password'
-            })
+              message: 'Wrong username / password',
+            });
           }
-        } else {
-          next({
-            message: 'Wrong username / password'
-          })
-        }
-      })
-      .catch(next);
+        })
+        .catch(next);
     }
   }
 

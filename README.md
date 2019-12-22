@@ -72,7 +72,7 @@ $ yarn dev
       "username": String(required),
       "email": String(required),
       "password": String(required),
-      "profile_pic": String,
+      "profile_pic": String
     }
     ```
 
@@ -92,9 +92,10 @@ $ yarn dev
         "Username required!",
         "Email required!",
         "Password required!"
+        "Username has already been taken!",
+        "Email has already been taken!"
       ]
     }
-    ```
 
 + ### Sign In
   > **Method** : `POST`<br>
@@ -105,7 +106,7 @@ $ yarn dev
     ```javascript
     {
       "email": String(required),
-      "password": String(required),
+      "password": String(required)
     }
     ```
 
@@ -120,7 +121,7 @@ $ yarn dev
     ```json
     {
       "code": 404,
-      "message": "Wrong username / password",
+      "message": "Wrong username / password"
     }
     ```
 
@@ -140,7 +141,10 @@ $ yarn dev
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2019 © <a href="" target="_blank">HAVUS</a>.
+- Copyright 2019 © <a href="https://github.com/havus" target="_blank">HAVUS</a>.
+- Contributor [
+  <a href="https://github.com/justarya" target="_blank">Just Arya</a>
+]
 
 <br><br><br>
 ### Happy Hacking!
